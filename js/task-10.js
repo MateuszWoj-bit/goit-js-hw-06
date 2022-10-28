@@ -1,10 +1,19 @@
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-}
 const box = document.querySelector('#boxes');
 const buttonCreate = document.querySelector('button:nth-child(2)');
 const buttonDelete = document.querySelector('button:nth-child(3)');
 const input = document.querySelector('input');
+
+const handleCreation = () => {
+  let value = Number.parseInt(input.value);
+  createBoxes(value);
+};
+const handleDestruction = () => {
+  destroyBoxes();
+};
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
 
 function createBoxes(amount) {
   for (let i = 1; i <= amount; i++) {
@@ -23,13 +32,6 @@ function destroyBoxes() {
   box.innerHTML = '';
 }
 
-const handleCreation = () => {
-  let value = Number.parseInt(input.value);
-  createBoxes(value);
-};
-const handleDestruction = () => {
-  destroyBoxes();
-};
-
 buttonCreate.addEventListener('click', handleCreation);
 buttonDelete.addEventListener('click', handleDestruction);
+

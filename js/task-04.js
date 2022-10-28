@@ -10,5 +10,6 @@ const handleIncrement = () => {
   counterValue++;
   document.getElementById('value').innerHTML = counterValue;
 };
+
 buttonDecrement.addEventListener('click', handleDecrement);
 buttonIncrement.addEventListener('click', handleIncrement);
